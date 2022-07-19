@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+.searchBlock {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./img/searchWallpepper.jpg');
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 10px;
+  &-loadmore {
+    margin: 0 auto;
+  }
+  &-buy {
+    font-size: 25px;
+    font-weight: 500;
+    width: 5rem;
+  }
+}
+
+.message {
+  width: 100%;
+  text-align: center;
+}
+
+.container {
+  &__books {
+    max-width: 80vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 2rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+  &__search {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  &__searchInput {
+    display: flex;
+    gap: 1rem;
+    input {
+      width: 70%;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 10px;
+      outline: none;
+    }
+    button {
+      width: 20%;
+      font-size: 20px;
+    }
+  }
+  &__searchParams {
+    display: flex;
+    gap: 1em;
+    font-size: 25px;
+
+    label {
+      color: #fff;
+      font-weight: 800;
+    }
+
+    select {
+      font-size: 20px;
+    }
+  }
+  &__loadmore {
+    display: flex;
+    margin-bottom: 4rem;
+  }
+}
+
+.total {
+  width: 80vw;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  h4 {
+    text-align: left;
+    font-weight: 400;
+  }
+}

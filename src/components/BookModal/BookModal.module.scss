@@ -1,0 +1,59 @@
+.bookModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  .close {
+    font-size: 60px;
+    font-weight: 900;
+    background: none;
+    border: none;
+    padding: 10px 25px;
+    cursor: pointer;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: rgb(64, 64, 64);
+    }
+  }
+}
+
+.content {
+  position: fixed;
+  display: flex;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vh;
+
+  background-color: rgb(254, 254, 254);
+}
+
+.left {
+  img {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.right {
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  h3 {
+    font-weight: 300;
+    font-style: italic;
+  }
+  h4 {
+    font-weight: 500;
+  }
+}
