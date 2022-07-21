@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import style from './BookModal.module.scss';
 
@@ -23,7 +24,11 @@ const BookModal = ({ clickToClose, title, authors, imageUrl, book }) => {
           </h5>
           <p>{book.volumeInfo.description}</p>
           {book.saleInfo.isEbook && (
-            <button className="btn btn-buy" onClick={() => {}}>
+            <button
+              className="btn btn-buy"
+              onClick={() => {
+                window.location.href = `https://books.google.co.in/books?id=${book.id}&dq=isbn:9781849699327&source=gbs_api`;
+              }}>
               Buy
             </button>
           )}

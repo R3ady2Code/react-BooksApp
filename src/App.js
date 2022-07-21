@@ -41,13 +41,16 @@ function App() {
   return (
     <div className="App">
       <SearchContainer
+        setLoadedBooks={setLoadedBooks}
         setSearchInput={setSearchInput}
         setCategory={setCategory}
         setSortBy={setSortBy}
         searchForBooks={searchForBooks}
+        books={books.items.length}
       />
       <BooksContainer
         books={loadedBooks}
+        fetchedBooks={books.items.length}
         total={books.total}
         status={books.status}
         searchInput={searchInput}

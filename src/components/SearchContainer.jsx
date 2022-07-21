@@ -1,8 +1,20 @@
 import React from 'react';
 
-const SearchContainer = ({ setSearchInput, setCategory, setSortBy, searchForBooks }) => {
+const SearchContainer = ({
+  setSearchInput,
+  setCategory,
+  setSortBy,
+  searchForBooks,
+  setLoadedBooks,
+  books,
+}) => {
   const sorts = ['Relevance', 'Newest'];
   const categories = ['All', 'Art', 'Biography', 'Computers', 'History', 'Medical', 'Poetry'];
+
+  const onHandleSearch = () => {
+    setLoadedBooks([]);
+    searchForBooks();
+  };
 
   return (
     <div className="searchBlock">
@@ -14,11 +26,11 @@ const SearchContainer = ({ setSearchInput, setCategory, setSortBy, searchForBook
             onChange={(e) => setSearchInput(e.target.value)}
             onKeyPress={(e) => {
               if (e.key === 'Enter') {
-                searchForBooks();
+                onHandleSearch();
               }
             }}
           />
-          <button className="btn" onClick={searchForBooks}>
+          <button className="btn" onClick={onHandleSearch}>
             Search
           </button>
         </div>

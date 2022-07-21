@@ -3,7 +3,7 @@ import React from 'react';
 import BookCard from './BookCard';
 import BookSkeleton from './BookCard/Skeleton';
 
-const BooksContainer = ({ books, status, total, searchInput, setStartIndex }) => {
+const BooksContainer = ({ books, status, total, searchInput, setStartIndex, fetchedBooks }) => {
   if ((!total && status === 'firstLoad') || (!searchInput && !total && status === 'loaded'))
     return <h2 className="message">Выполните поиск по книгам</h2>;
 
@@ -12,6 +12,7 @@ const BooksContainer = ({ books, status, total, searchInput, setStartIndex }) =>
 
   if (status === 'error') return <h2 className="message">Не удалось выполнить поиск по книгам</h2>;
 
+  console.log(fetchedBooks);
   return (
     <>
       {status === 'loaded' && (
@@ -26,7 +27,10 @@ const BooksContainer = ({ books, status, total, searchInput, setStartIndex }) =>
       </div>
       {status === 'loaded' && (
         <div className="container__loadmore">
-          <button className="btn btn-loadmore" onClick={() => setStartIndex((s) => s + 30)}>
+          <button
+            disabled={fetchedBooks < 30}
+            className="btn btn-loadmore"
+            onClick={() => setStartIndex((s) => s + 30)}>
             Load more
           </button>
         </div>

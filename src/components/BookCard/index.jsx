@@ -2,14 +2,14 @@ import React from 'react';
 
 import styles from './BookCard.module.scss';
 import defaultBook from '../../img/book.png';
-import BookModal from '../BookModal';
+import BookModal from '../BookModule';
 
 const BookCard = ({ ...book }) => {
   const [openModal, setOpenModal] = React.useState(false);
 
   const title = book.volumeInfo.title;
   const authors = book.volumeInfo.authors && book.volumeInfo.authors.join(', ');
-  const imageUrl = book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail;
+  const imageUrl = book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail;
   const category = book.volumeInfo.categories && book.volumeInfo.categories[0];
 
   return (
